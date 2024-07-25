@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     display: flex;
 }
@@ -7,7 +6,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 220px; /* Adjust width as needed */
+    width: 220px;
     height: 100%;
     background-color: #f8f9fa;
     padding-top: 20px;
@@ -16,14 +15,18 @@ body {
 #side-nav .navbar-brand {
     text-align: center;
     font-weight: bold;
-    padding-bottom: 20px;
+    padding-bottom: 10px; 
 }
 
 #profile-photo {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
+}
+
+#side-nav .locations {
+    margin-bottom: 20px;
 }
 
 #side-nav .navbar-nav {
@@ -38,7 +41,7 @@ body {
 #side-nav .nav-link {
     color: #000;
     font-weight: bold;
-    padding: 10px 20px; /* Add padding to align text properly */
+    padding: 10px 20px; 
     width: 100%;
     text-align: left;
 }
@@ -49,21 +52,18 @@ body {
 }
 
 #main-content {
-    margin-left: 240px; /* Adjust margin to match nav width */
+    margin-left: 240px;
     padding: 20px;
     width: calc(100% - 240px);
 }
 
 section {
-    padding: 100px 0; /* Increase padding to make sections taller */
+    height: 100vh;
+    padding: 100px 0; 
 }
 
 #about {
     background-color: #f9f9f9;
-}
-
-#portfolio {
-    background-color: #ffffff;
 }
 
 #resume {
@@ -82,4 +82,55 @@ footer {
     padding: 20px 0;
     background-color: #e9ecef;
     position: relative;
+}
+
+.locations > p {
+    margin-bottom: 5px; 
+    font-size: small;
+}
+
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.project {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.project .card {
+    width: 300px;
+}
+
+#portfolio {
+    background-color: #ffffff;
+    padding: 50px 0; 
+}
+
+.sticky_parent {
+    height: 100vh; 
+    overflow: hidden;
+    position: relative;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh; 
+}
+
+.scroll_section {
+    display: flex;
+    height: 100%;
+    will-change: transform;
+}
+
+img {
+    width: 400px;
+    height: 80%;
+    object-fit: cover;
 }
