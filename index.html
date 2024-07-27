@@ -1,203 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <nav id="side-nav" class="navbar navbar-expand-lg navbar-light bg-light flex-column">
-        <div class="text-center py-4">
-            <img src="assets/pfp.jpeg" class="rounded-circle" alt="Photo" id="profile-photo">
-            <h2>José Felisberto</h2>
-        </div>
-        <div class="locations">
-            <p>📍 Viseu, 🇵🇹</p>
-            <p>📚 Porto, 🇵🇹</p>
-        </div>
-        <ul class="navbar-nav flex-column w-100">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>hybrid scrolling</title>
+  </head>
+  <body>
+    <nav id="side-nav">
+      <ul>
+        <li><a href="#section1">About Me</a></li>
+        <li><a href="#section2">Portfolio</a></li>
+        <li><a href="#section3">Resume</a></li>
+        <li><a href="#section4">Interests</a></li>
+        <li><a href="#section5">Contacts</a></li>
+      </ul>
     </nav>
 
-    <div id="main-content">
-        <section id="about">
-            <div class="container">
-                <h1>About Me</h1>
-                <p>Lorem ipsum</p>
-            </div>
-        </section>
+    <main>
+      <section id="section1">
+        <div class="container">
+          <h1>About Me</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ratione error aut voluptates deleniti recusandae architecto numquam culpa obcaecati, temporibus quo voluptatibus repudiandae natus quis, magni totam similique veniam adipisci!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ratione error aut voluptates deleniti recusandae architecto numquam culpa obcaecati, temporibus quo voluptatibus repudiandae natus quis, magni totam similique veniam adipisci!</p>
+        </div>
+      </section>
 
-        <section id="portfolio">
+      <div class="scroll_container" id="section2">
+        <div class="sticky_wrap">
+          <div class="horizontal_scroll">
+            <div class="scroll_contents red">
+              <h2 class="left">Hello</h2>
+            </div>
+            <div class="scroll_contents yellow"></div>
+            <div class="scroll_contents green"></div>
+            <div class="scroll_contents blue">
+              <h2 class="right">Goodbye</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="section3">
+        <div class="container">
             <h1>Resume</h1>
-            <div class="sticky_parent">
-                <div class="sticky">
-                    <div class="scroll_section">
-                        <div class="horizontal-scroll">
-                            <div class="project">
-                                <div class="card">
-                                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 1</h5>
-                                        <p class="card-text">Description of project 1...</p>
-                                        <a href="https://github.com/" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project">
-                                <div class="card">
-                                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 1</h5>
-                                        <p class="card-text">Description of project 1...</p>
-                                        <a href="https://github.com/" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project">
-                                <div class="card">
-                                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 1</h5>
-                                        <p class="card-text">Description of project 1...</p>
-                                        <a href="https://github.com/" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project">
-                                <div class="card">
-                                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 1</h5>
-                                        <p class="card-text">Description of project 1...</p>
-                                        <a href="https://github.com/" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project">
-                                <div class="card">
-                                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 1</h5>
-                                        <p class="card-text">Description of project 1...</p>
-                                        <a href="https://github.com/" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project">
-                                <div class="card">
-                                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 1</h5>
-                                        <p class="card-text">Description of project 1...</p>
-                                        <a href="https://github.com/" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project">
-                                <div class="card">
-                                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 1</h5>
-                                        <p class="card-text">Description of project 1...</p>
-                                        <a href="https://github.com/" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project">
-                                <div class="card">
-                                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 1</h5>
-                                        <p class="card-text">Description of project 1...</p>
-                                        <a href="https://github.com/" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project">
-                                <div class="card">
-                                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 1</h5>
-                                        <p class="card-text">Description of project 1...</p>
-                                        <a href="https://github.com/" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project">
-                                <div class="card">
-                                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 1</h5>
-                                        <p class="card-text">Description of project 1...</p>
-                                        <a href="https://github.com/" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ratione error aut voluptates deleniti recusandae architecto numquam culpa obcaecati, temporibus quo voluptatibus repudiandae natus quis, magni totam similique veniam adipisci!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ratione error aut voluptates deleniti recusandae architecto numquam culpa obcaecati, temporibus quo voluptatibus repudiandae natus quis, magni totam similique veniam adipisci!</p>
+        </div>
+      </section>
 
-        <section id="resume">
-            <div class="container">
-                <h1>Resume</h1>
-                <p>Here is a summary of my education and work experience:</p>
-                <ul>
-                    <li><strong>Education:</strong>
-                        <ul>
-                            <li>Lorem</li>
-                        </ul>
-                    </li>
-                    <li><strong>Work Experience:</strong>
-                        <ul>
-                            <li>Ipsum</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </section>
+      <section id="section4">
+        <div class="container">
+            <h1>Interests</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ratione error aut voluptates deleniti recusandae architecto numquam culpa obcaecati, temporibus quo voluptatibus repudiandae natus quis, magni totam similique veniam adipisci!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ratione error aut voluptates deleniti recusandae architecto numquam culpa obcaecati, temporibus quo voluptatibus repudiandae natus quis, magni totam similique veniam adipisci!</p>  
+        </div>
+      </section>
 
-        <section id="services">
-            <div class="container">
-                <h1>Services</h1>
-                <p>Lorem ipsum:</p>
-                <ul>
-                    <li>Lo</li>
-                    <li>Ren</li>
-                    <li>Ip</li>
-                    <li>Sum</li>
-                </ul>
-            </div>
-        </section>
+      <section id="section5">
+        <div class="container">
+            <h1>Contacts</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ratione error aut voluptates deleniti recusandae architecto numquam culpa obcaecati, temporibus quo voluptatibus repudiandae natus quis, magni totam similique veniam adipisci!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ratione error aut voluptates deleniti recusandae architecto numquam culpa obcaecati, temporibus quo voluptatibus repudiandae natus quis, magni totam similique veniam adipisci!</p>  
+        </div>
+      </section>
 
-        <section id="contact">
-            <div class="container">
-                <h1>Contact</h1>
-                <p>If you'd like to get in touch, feel free to reach out via email or social media:</p>
-                <ul>
-                    <li>Email: email@example.com</li>
-                    <li>LinkedIn: <a href="https://www.linkedin.com/in/profile/">profile</a></li>
-                    <li>GitHub: <a href="https://github.com/yourusername">username</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="bg-light text-center">
-            <p>&copy; José Felisberto</p>
-        </footer>
-    </div>
-
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </main>
     <script src="js/scripts.js"></script>
-</body>
+  </body>
 </html>

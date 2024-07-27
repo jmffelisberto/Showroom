@@ -1,136 +1,129 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'IBM Plex Mono';
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html, body, main {
+    width: 100%;
+    height: 100%;
+}
+
 body {
+    background-color: #f7f7f7;
+    color: #010101;
     display: flex;
 }
 
 #side-nav {
+    width: 200px;
+    background-color: #333;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 220px;
     height: 100%;
-    background-color: #f8f9fa;
-    padding-top: 20px;
-}
-
-#side-nav .navbar-brand {
-    text-align: center;
-    font-weight: bold;
-    padding-bottom: 10px; 
-}
-
-#profile-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px; 
-}
-
-#side-nav .locations {
-    margin-bottom: 20px;
-}
-
-#side-nav .navbar-nav {
+    display: flex;
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-#side-nav .nav-item {
-    width: 100%;
+#side-nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-#side-nav .nav-link {
-    color: #000;
-    font-weight: bold;
-    padding: 10px 20px; 
-    width: 100%;
-    text-align: left;
+#side-nav li {
+    margin: 20px 0;
 }
 
-#side-nav .nav-link.active {
-    color: #007bff;
-    background-color: #e9ecef;
+#side-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-#main-content {
-    margin-left: 240px;
+#side-nav a:hover {
+    color: #ddd;
+}
+
+main {
+    margin-left: 200px;
+    width: calc(100% - 200px);
     padding: 20px;
-    width: calc(100% - 240px);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    width: 90%;
+    margin: 2rem 0;
 }
 
 section {
     height: 100vh;
-    padding: 100px 0; 
 }
 
-#about {
-    background-color: #f9f9f9;
+.container {
+    padding: 5rem;
 }
 
-#resume {
-    background-color: #f9f9f9;
+.scroll_container {
+    height: 400vh;
 }
 
-#services {
-    background-color: #ffffff;
-}
-
-#contact {
-    background-color: #f9f9f9;
-}
-
-footer {
-    padding: 20px 0;
-    background-color: #e9ecef;
-    position: relative;
-}
-
-.locations > p {
-    margin-bottom: 5px; 
-    font-size: small;
-}
-
-.horizontal-scroll {
+.horizontal_scroll {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 400vw;
+    will-change: transform;
     display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    width: 100%;
+    justify-content: space-between;
 }
 
-.project {
-    flex: 0 0 auto;
-    margin-right: 20px;
+.scroll_contents {
+    height: 100%;
+    width: 100vw;
 }
 
-.project .card {
-    width: 300px;
-}
-
-#portfolio {
-    background-color: #ffffff;
-    padding: 50px 0; 
-}
-
-.sticky_parent {
-    height: 100vh; 
+.sticky_wrap {
     overflow: hidden;
-    position: relative;
-}
-
-.sticky {
     position: sticky;
     top: 0;
-    height: 100vh; 
+    height: 100vh;
 }
 
-.scroll_section {
-    display: flex;
-    height: 100%;
-    will-change: transform;
+.red {
+    background-color: #ff3d00;
 }
 
-img {
-    width: 400px;
-    height: 80%;
-    object-fit: cover;
+.yellow {
+    background-color: #ffff00;
+}
+
+.green {
+    background-color: #05ff00;
+}
+
+.blue {
+    background-color: #2835f8;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #f7f7f7;
+}
+
+.left {
+    margin-top: 5vh;
+    margin-left: 5vw;
+}
+
+.right {
+    text-align: right;
+    margin-top: 85vh;
+    margin-right: 5vw;
 }
