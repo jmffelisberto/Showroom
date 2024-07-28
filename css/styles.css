@@ -57,6 +57,12 @@ h1 {
     font-size: 2rem;
 }
 
+.scroll-title {
+    font-size: 2rem;
+    padding-left: 5rem;
+    margin-top: 5rem;
+}
+
 p {
     width: 90%;
     margin: 2rem 0;
