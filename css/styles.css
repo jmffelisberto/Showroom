@@ -82,8 +82,8 @@ section {
 
 .horizontal_scroll {
     position: absolute;
-    top: 0;
-    height: 100%;
+    top: 10%;
+    height: 60%;
     width: 400vw;
     will-change: transform;
     display: flex;
