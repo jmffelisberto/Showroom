@@ -76,10 +76,6 @@ section {
     padding: 5rem;
 }
 
-.scroll_container {
-    height: 400vh;
-}
-
 .horizontal_scroll {
     position: absolute;
     top: 10%;
@@ -98,8 +94,14 @@ section {
 .sticky_wrap {
     overflow: hidden;
     position: sticky;
-    top: 0;
-    height: 100vh;
+    top: 10rem; /* Increase the value to make the transition point higher */
+    height: calc(100vh - 10rem); /* Adjust the height to match the top property */
+    margin-top: -10rem; /* Offset the top property to ensure correct initial position */
+}
+
+.scroll_container {
+    height: 400vh; /* Keep the height for full horizontal scrolling */
+    padding-top: 10rem; /* Ensure padding matches .sticky_wrap adjustments */
 }
 
 .red {
