@@ -95,15 +95,15 @@ section {
 }
 
 /* Horizontal Scroll */
-.horizontal_scroll {
+/* .horizontal_scroll {
   position: absolute;
   top: 10%;
   height: 60%;
-  width: 400vw;
+  width: 100vw;
   will-change: transform;
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .scroll_contents {
   height: 100%;
@@ -119,7 +119,7 @@ section {
 }
 
 .scroll_container {
-  height: 400vh; 
+  height: 200vh; 
   padding-top: 10rem; 
 }
 
@@ -362,65 +362,77 @@ h2 {
 }
 
 /* Project Card Layout */
+
+.horizontal_scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+  width: calc(450px * 4 + 32px * 3); /* Adjusted for new card width and margin */
+}
+
 .project-card {
   display: flex;
-  align-items: flex-start; /* Align items at the top */
-  padding: 2rem;
-  box-sizing: border-box;
-  background-color: #fff;
+  background: white;
   border-radius: 10px;
-  overflow: hidden; /* Prevent overflow issues */
-  max-width: 90%; /* Limit the width to prevent oversized cards */
-  margin: 1rem auto; /* Center the card horizontally */
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 450px; /* Increased width */
+  height: 300px; /* Fixed height */
+  margin-right: 2rem; /* Margin between cards */
+  scroll-snap-align: start;
 }
 
-/* Card Image */
+.project-card:last-child {
+  margin-right: 0;
+}
+
 .card-image {
-  flex: 0 0 50%; /* Set image to 50% of the card's width */
-  max-width: 585px; /* Set a max-width for the image */
+  width: 150px; /* Fixed width for the image */
   height: auto; /* Maintain aspect ratio */
-  border-radius: 10px;
-  margin-right: 1.5rem; /* Space between image and text */
+  object-fit: cover;
 }
 
-/* Card Text */
 .card-text {
-  flex: 1; /* Take up the remaining space */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribute text and button evenly */
+  justify-content: space-between;
+  padding: 1rem;
+  flex: 1;
 }
 
-/* Title and Description */
+.card-content {
+  margin-bottom: 1rem; /* Space between text and button */
+}
+
 .card-title {
+  margin: 0;
   font-size: 1.5rem;
-  color: #010101;
-  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .card-description {
+  margin: 0.5rem 0 0 0;
   font-size: 1rem;
   color: #555;
-  margin-bottom: 1rem;
 }
 
-/* Button */
 .card-button {
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
+  align-self: flex-start;
+  text-decoration: none;
   color: #fff;
   background-color: #007bff;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
-  text-decoration: none;
   transition: background-color 0.3s ease;
-  align-self: flex-start; /* Align button to the left */
 }
 
 .card-button:hover {
   background-color: #0056b3;
 }
+
 
 #image2 {
   max-width: 550px;
