@@ -361,7 +361,6 @@ h2 {
   vertical-align:auto;/* Align icon with the text */
 }
 
-/* Adjusted Card Layout for Image on the Left and Text on the Right */
 /* Project Card Layout */
 .project-card {
   display: flex;
@@ -379,7 +378,7 @@ h2 {
 /* Card Image */
 .card-image {
   flex: 0 0 50%; /* Set image to 50% of the card's width */
-  max-width: 300px; /* Set a max-width for the image */
+  max-width: 585px; /* Set a max-width for the image */
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px;
   margin-right: 1.5rem; /* Space between image and text */
@@ -421,4 +420,12 @@ h2 {
 
 .card-button:hover {
   background-color: #0056b3;
+}
+
+#image2 {
+  max-width: 550px;
+}
+
+#image4 {
+  max-width: 510px;
 }
