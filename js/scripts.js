@@ -37,6 +37,7 @@ function showTime(e) {
   e.querySelector(".date").style.opacity = "100%";
   e.querySelector("p").style.opacity = "100%";
   e.querySelector("p").style.transform = "translateY(0px)";
+  e.querySelector("p").style.transition = "opacity 1s ease-in-out, transform 1s ease-in-out"; // Ensuring smooth transition
 }
 
 function hideTime(e) {

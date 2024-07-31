@@ -177,123 +177,163 @@ h2 {
   margin-right: 50px;
   padding-top: 40px; /* Space for date labels */
   text-align: center;
-  width: 250px;
+  width: 250px; /* Adjust width as needed */
 }
 
+/* Timeline Major Bar (Horizontal Line) */
+.timeline .timeline-line {
+  position: absolute;
+  top: 20px; /* Align with timeline-point */
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ddd; /* Light color for the major bar */
+  z-index: 0; /* Behind timeline points */
+}
+
+/* Timeline Progress Bar (Inline Bar) */
+.timeline .timeline-innerline {
+  position: absolute;
+  top: 0; /* Align with timeline-point */
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: blue; /* Color for progress indication */
+  transition: width 1s ease-in-out;
+  z-index: 1; /* Above the major bar */
+}
+
+/* Timeline Point (Circle) */
 .timeline .timeline-point {
   position: absolute;
-  top: 0;
+  top: 12.5px; /* Center the circle vertically on the line */
   left: 50%;
   transform: translateX(-50%);
   width: 15px;
   height: 15px;
-  background-color: blue;
+  background-color: #f7f7f7; /* Initially hidden color */
+  border: 2px solid blue; /* Border color */
   border-radius: 50%;
-  border: 2px solid #f7f7f7;
-  z-index: 1;
+  z-index: 2; /* Above the line and progress bar */
 }
 
-.timeline .timeline-line {
-  position: absolute;
-  top: 7.5px; /* Centered vertically with timeline-point */
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #ddd;
-}
-
-.timeline .timeline-innerline {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: blue;
-  transition: width 1s ease-in-out;
-}
-
+/* Date Label */
 .timeline .date {
   position: absolute;
-  top: 25px; /* Position above the timeline-point */
+  top: 30px; /* Position above the timeline-point */
   left: 50%;
   transform: translateX(-50%);
   font-size: 14px;
   font-weight: bold;
   color: #333;
-  white-space: nowrap; /* Prevent wrapping of date text */
+  white-space: nowrap;
+  opacity: 0; /* Start hidden */
+  transition: opacity 1s ease-in-out; /* Smooth transition */
 }
 
+/* Content Card */
 .timeline .content {
-  display: inline-block;
-  width: 100%;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 20px; /* Space between the timeline and the card */
   background: #fff;
   border-radius: 8px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: left;
-  margin-top: 20px; /* Space between the timeline and the card */
+  z-index: 3; /* Above the timeline elements */
+  overflow: hidden; /* Ensure no overflow outside the card */
+  width: 100%; /* Ensure the content takes the full width of the parent */
 }
 
+
 .timeline .content h2 {
-  font-size: 1rem;
+  font-size: 1.2rem; /* Adjust as needed */
   color: #333;
-  margin-bottom: 5px;
+  margin: 0 0 10px 0; /* Remove margin-top to avoid extra space */
+  font-weight: bold;
+  word-break: break-word; /* Break long words */
+  overflow-wrap: break-word; /* Ensure long words wrap */
+  line-height: 1.3; /* Improve readability */
+  white-space: normal; /* Allow wrapping */
 }
 
 .timeline .content p {
-  font-size: 0.85rem;
+  font-size: 0.9rem; /* Smaller size compared to h2 */
+  font-weight: 400; /* Normal weight */
   color: #555;
-  line-height: 1.4;
-  white-space: normal;
-  margin: 0;
+  margin: 10px 0; /* Space between paragraphs */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-10px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  white-space: normal; /* Allow wrapping */
+  line-height: 1.5; /* Improve readability */
+  word-wrap: break-word; /* Ensure long words wrap properly */
+  overflow-wrap: break-word; /* For compatibility with older browsers */
 }
 
+.timeline li[done] .content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Adjust positioning for multiple contents */
+.timeline .content + .content {
+  margin-top: 10px; /* Space between multiple events */
+}
 
 @media screen and (min-width: 728px) {
   .timeline {
-      display: block;
+    display: block;
   }
   ul {
-      flex-direction: row;
+    flex-direction: row;
   }
   li {
-      margin-top: 0px;
-      position: relative;
-      width: 100%;
-      padding: 0px;
-  }
-  li p {
-      transform: translateY(-10px);
-      opacity: 0;
-      transition: 1.5s;
-  }
-  .date {
-      opacity: 0;
-      transition: 1.5s;
-      font-size: 12px;
-      position: absolute;
-      top: -60px;
-      left: 38%;
+    margin-top: 0px;
+    position: relative;
+    width: 100%;
+    padding: 0px;
   }
   .timeline-point {
-      width: 15px;
-      height: 15px;
-      top: -40px;
-      left: 40%;
-      transition: 1.5s ease;
+    top: -40px;
+    left: 50%;
+    transition: 1.5s ease;
   }
   .timeline-line {
-      width: 100%;
-      height: 4px;
-  }
-  .timeline-innerline {
-      position: absolute;
-      background: blue;
-      width: 0%;
-      height: 4px;
-      top: 0%;
-      left: 0%;
-      transition: 1s linear;
-      border-radius: 999px;
+    width: 100%;
+    height: 4px;
   }
 }
+
+/* Hide the link by default */
+.hidden-link {
+  color: #555; /* Set the color as needed */
+  text-decoration: none; /* Remove underline */
+  position: relative; /* Needed for positioning */
+}
+
+.hidden-link::before {
+  content: ''; /* Empty content to use as a placeholder */
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 1px solid transparent; /* Creates the space for the link */
+  transition: width 0.3s ease; /* Smooth transition */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hidden-link:hover::before {
+  width: 100%; /* Expand on hover */
+  border: 1px solid blue; /* Add border color */
+}
+
+.hidden-link:hover {
+  color: blue; /* Change text color on hover */
+}
+
+
