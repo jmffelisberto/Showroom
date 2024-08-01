@@ -536,10 +536,9 @@ h2 {
 
 
 /* Interests Section */
-/* Interests Section */
 #section4 {
   padding: 5rem 0;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .interest-cards {
@@ -554,7 +553,7 @@ h2 {
   position: relative;
   width: 30%;
   min-width: 250px;
-  height: 300px;
+  height: 400px; /* Increased height for more content */
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -565,15 +564,15 @@ h2 {
 }
 
 .interest-card#interest1 {
-  background-image: url('path/to/your/technology-image.jpg');
+  background-image: url('../assets/image5.jpg');
 }
 
 .interest-card#interest2 {
-  background-image: url('path/to/your/photography-image.jpg');
+  background-image: url('../assets/image6.jpg');
 }
 
 .interest-card#interest3 {
-  background-image: url('path/to/your/travel-image.jpg');
+  background-image: url('../assets/image9.png');
 }
 
 .card-overlay {
@@ -581,7 +580,7 @@ h2 {
   bottom: 0;
   width: 100%;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.75);
   color: #fff;
   transform: translateY(100%);
   transition: transform 0.3s ease;
@@ -592,15 +591,9 @@ h2 {
   transform: translateY(0);
 }
 
-.interest-title {
-  font-size: 1.5rem;
-  margin: 0;
-  font-weight: bold;
-}
-
 .interest-description {
-  font-size: 1rem;
-  margin-top: 0.5rem;
+  font-size: 0.9rem; /* Smaller font size */
+  margin: 0.5rem 0 0 0;
 }
 
 .clickable-card a {
@@ -625,10 +618,11 @@ h2 {
   .interest-card {
     width: 100%;
     height: auto;
-    min-height: 300px;
+    min-height: 350px; /* Adjusted for mobile */
   }
 
   .card-overlay {
     transform: translateY(0); /* Always visible on mobile */
   }
 }
+
