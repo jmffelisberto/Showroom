@@ -128,3 +128,21 @@ function resizeEnd() {
   i = 0;
   slowLoop();
 }
+
+// Interests section
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.interest-card');
+
+  const fadeInOnScroll = () => {
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }
+    });
+  };
+
+  window.addEventListener('scroll', fadeInOnScroll);
+  fadeInOnScroll(); // Initial call to show cards already in view
+});

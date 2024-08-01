@@ -536,29 +536,99 @@ h2 {
 
 
 /* Interests Section */
+/* Interests Section */
 #section4 {
   padding: 5rem 0;
+  text-align: center;
 }
 
-.interests-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.interest-cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* For responsive layout */
 }
 
-.interest-item {
-  margin-bottom: 2rem;
+.interest-card {
+  position: relative;
+  width: 30%;
+  min-width: 250px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 1s ease;
+  opacity: 0; /* Hidden by default for fade-in effect */
+}
+
+.interest-card#interest1 {
+  background-image: url('path/to/your/technology-image.jpg');
+}
+
+.interest-card#interest2 {
+  background-image: url('path/to/your/photography-image.jpg');
+}
+
+.interest-card#interest3 {
+  background-image: url('path/to/your/travel-image.jpg');
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.interest-card:hover .card-overlay,
+.interest-card:focus .card-overlay {
+  transform: translateY(0);
 }
 
 .interest-title {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 1.5rem;
   margin: 0;
+  font-weight: bold;
 }
 
 .interest-description {
   font-size: 1rem;
-  color: #555;
   margin-top: 0.5rem;
+}
+
+.clickable-card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.clickable-card:hover .card-overlay,
+.clickable-card:focus .card-overlay {
+  cursor: pointer;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+  .interest-cards {
+    flex-direction: column;
+  }
+
+  .interest-card {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .card-overlay {
+    transform: translateY(0); /* Always visible on mobile */
+  }
 }
