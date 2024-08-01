@@ -146,3 +146,20 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', fadeInOnScroll);
   fadeInOnScroll(); // Initial call to show cards already in view
 });
+
+function copyToClipboard(text, event) {
+  event.preventDefault(); // Prevent default anchor behavior
+  navigator.clipboard.writeText(text).then(function() {
+    showPopup(); // Show the popup notification
+  }, function(err) {
+    console.error('Failed to copy email address: ', err);
+  });
+}
+
+function showPopup() {
+  const popup = document.getElementById('popup');
+  popup.classList.add('show');
+  setTimeout(() => {
+    popup.classList.remove('show');
+  }, 3000); // Hide popup after 3 seconds
+}
