@@ -148,11 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function copyToClipboard(text, event) {
-  event.preventDefault(); // Prevent default anchor behavior
+  event.preventDefault(); // Prevent default anchor click behavior
   navigator.clipboard.writeText(text).then(function() {
-    showPopup(); // Show the popup notification
+    const popup = document.getElementById('clipboardPopup');
+    popup.classList.add('show');
+    setTimeout(() => {
+      popup.classList.remove('show');
+    }, 2000);
   }, function(err) {
-    console.error('Failed to copy email address: ', err);
+    console.error('Could not copy text: ', err);
   });
 }
 

@@ -632,6 +632,7 @@ h2 {
   padding: 4rem 2rem;
   background-color: #f7f7f7;
   text-align: center;
+  position: relative; /* Ensure the section has a relative position for absolute children */
 }
 
 .contact-link {
@@ -648,7 +649,7 @@ h2 {
 
 .contact-section h1 {
   font-size: 2.5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   text-decoration: underline;
 }
 
@@ -683,21 +684,20 @@ h2 {
 }
 
 .popup {
-  position: fixed;
-  bottom: 20px;
+  position: fixed; /* Fix it at the bottom of the page */
   left: 50%;
+  bottom: 20px;
   transform: translateX(-50%);
   background-color: #333;
   color: #fff;
-  padding: 2px 4px;
+  padding: 6px 12px;
   border-radius: 5px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
   font-size: 14px;
-  max-width: 90%;
-  box-sizing: border-box;
-  text-align: center; /* Center-align the text */
+  z-index: 1000; /* Ensure it appears above other elements */
+  text-align: center;
 }
 
 .popup.show {
@@ -705,15 +705,17 @@ h2 {
   visibility: visible;
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
   .popup {
-    padding: 6px 12px; /* Reduced padding for smaller screens */
-    font-size: 12px; /* Smaller font size for small screens */
-    max-width: 80%;
+    padding: 6px 12px;
+    font-size: 12px;
     bottom: 10px;
   }
 }
+
+
+
+
 
 
 
