@@ -507,6 +507,26 @@ h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-subtitle.fade-in {
+  transition-delay: 0s; /* No delay for the subtitle */
+}
+
+.about-title.fade-in {
+  transition-delay: 0.5s; /* 0.5s delay for the title */
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;

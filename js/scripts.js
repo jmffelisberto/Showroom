@@ -159,3 +159,28 @@ function copyToClipboard(text, event) {
     console.error('Could not copy text: ', err);
   });
 }
+
+
+//Initial Fade In
+document.addEventListener("DOMContentLoaded", function() {
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.5, // Element is considered visible when 50% of it is visible
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        return;
+      } else {
+        entry.target.classList.add('show');
+        appearOnScroll.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+});
