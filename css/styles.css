@@ -713,6 +713,45 @@ h2 {
   }
 }
 
+/* Tag */
+
+.card-footer {
+  margin-top: auto; /* Pushes the footer to the bottom of the card */
+  display: flex;
+  flex-direction: column;
+  align-items: start; /* Align content to the start of the container */
+  gap: 0.5rem; /* Space between the tag and button */
+}
+
+.project-tag {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.language {
+  font-size: 0.9rem;
+  color: #010101;
+}
+
+.card-button {
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
 
 
 
