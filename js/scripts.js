@@ -184,3 +184,37 @@ document.addEventListener("DOMContentLoaded", function() {
     appearOnScroll.observe(fader);
   });
 });
+
+// Highlight Side-Nav
+document.addEventListener("DOMContentLoaded", function() {
+  // Array of IDs for sections or divs that need track
+  const sectionIds = ["section1", "section2", "section3", "section4", "section5"];
+  const navLinks = document.querySelectorAll("#side-nav a");
+
+  const highlightNavLink = (targetId) => {
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${targetId}`) {
+        link.classList.add("active");
+      }
+    });
+  };
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        highlightNavLink(entry.target.id);
+      }
+    });
+  }, {
+    threshold: 0.25
+  });
+
+  sectionIds.forEach(id => {
+    const sectionElement = document.getElementById(id);
+    if (sectionElement) {
+      sectionObserver.observe(sectionElement);
+    }
+  });
+});
+

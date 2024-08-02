@@ -61,6 +61,10 @@ body {
   color: #ddd;
 }
 
+#side-nav a.active {
+  color: #007bff; /* Change to your desired highlight color */
+  font-weight: bold;
+}
 
 main {
   margin-left: 200px;
