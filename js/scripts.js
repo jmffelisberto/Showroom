@@ -159,11 +159,3 @@ function copyToClipboard(text, event) {
     console.error('Could not copy text: ', err);
   });
 }
-
-function showPopup() {
-  const popup = document.getElementById('popup');
-  popup.classList.add('show');
-  setTimeout(() => {
-    popup.classList.remove('show');
-  }, 3000); // Hide popup after 3 seconds
-}
