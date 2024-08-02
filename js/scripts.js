@@ -225,7 +225,7 @@ function isMobileDevice() {
 // Redirect to mobile.html if on a mobile device
 window.onload = function() {
   if (isMobileDevice()) {
-    window.location.href = 'mobile.html';
+    window.location.href = '../mobile.html';
   }
 }
 
